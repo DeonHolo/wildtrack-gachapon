@@ -15,6 +15,7 @@
 .capsule[data-color="teal"] { --shell-light: #b5e7d1; --shell: #64b9a8; --shell-dark: #337e80; --seam: #366f70; }
 .ball-backing, .ball-top, .ball-bottom { position: absolute; inset: 0; border-radius: 50%; pointer-events: none; }
 .ball-backing { background: radial-gradient(circle at 32% 22%, #fff1d9 1%, #f5d4ba 48%, #dfa6a0 82%); border: 1.5px solid #a06860; }
+.sticker-window { position: absolute; inset: 0; z-index: 1; clip-path: circle(49% at 50% 50%); pointer-events: none; }
 .capsule img { position: absolute; z-index: 1; left: 9%; top: 7%; width: 83%; height: 85%; object-fit: contain; pointer-events: none; }
 .ball-top {
   z-index: 2; background: radial-gradient(ellipse at 61% 63%, transparent 52%, #fff6e133 66%, #ffedd7a8 84%, #e9b8a6cc 100%);
@@ -65,7 +66,8 @@
 }
 .drop-carrier { position: absolute; width: 72%; aspect-ratio: 1; left: 16%; bottom: 5%; opacity: 0; }
 .rolling-ball { position: absolute; inset: 0; }
-.rolling-ball .capsule img { top: 4%; }
+.rolling-ball .sticker-window { position: absolute; inset: 0; z-index: 1; clip-path: circle(49% at 50% 50%); pointer-events: none; }
+.capsule img { top: 4%; }
 .glazing { z-index: 2; }
 .bay-action { z-index: 3; }
 .jam-mark { display: none; position: absolute; width: 5%; height: 19%; right: 6%; top: 30%; background: #ffefaf; transform: rotate(44deg); border-radius: 65%; }

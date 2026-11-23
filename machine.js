@@ -17,7 +17,7 @@
       <span class="gold-medal" aria-hidden="true"></span>`;
     return `
     <span class="ball-backing"></span>
-    <img data-mascot="${key}" src="assets/${key}.png" alt="" draggable="false">
+    <span class="sticker-window"><img data-mascot="${key}" src="assets/${key}.png" alt="" draggable="false"></span>
     <span class="ball-top"></span><span class="ball-bottom"></span>`;
   }
 

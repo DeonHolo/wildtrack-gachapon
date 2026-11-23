@@ -18,4 +18,4 @@ Each of the six original Wildcat stickers and the solid golden capsule has a **1
 
 The original Wildcat sticker art belongs to the WildTrack team. The cabinet and capsule shells are drawn in SVG and CSS. The reveal uses locally bundled GSAP 3.15.1 and sound playback uses Howler 2.2.4. Bricolage Grotesque and Manrope are bundled locally.
 
-The crank uses an ElevenLabs AI-generated mechanical effect. The thud, plastic tap, pops and gold chime come from Wyzowl’s AI-assisted SFX Kit. Source files, edits and credits are listed in [the sound credits](assets/sfx/SOURCES.txt). [ElevenLabs sound effects](https://elevenlabs.io/sound-effects/ai) · [Wyzowl SFX Kit](https://github.com/wyzowl/sfx-kit)
+The crank uses an ElevenLabs AI-generated mechanical effect. The thud, plastic tap, pops and both prize fanfares come from Wyzowl’s AI-assisted SFX Kit. Source files, edits and credits are listed in [the sound credits](assets/sfx/SOURCES.txt). [ElevenLabs sound effects](https://elevenlabs.io/sound-effects/ai) · [Wyzowl SFX Kit](https://github.com/wyzowl/sfx-kit)

@@ -32,3 +32,9 @@ pop-medium-out.wav <- sounds/pops/pop-medium-out.wav
 Cue mapping in audio.js:
 turn = ElevenLabs robotic arm clicks; jam = failure thud; nudge = plastic touch;
 drop = pop medium-in; open = pop medium-out; gold = success clear.
+
+sting-playful-short.wav — https://raw.githubusercontent.com/wyzowl/sfx-kit/92780e7ab0cdfb557497a988089c47f46e8c7412/sounds/logo-stings/sting-playful-short.wav
+SHA-256 b698931eae670f9ed5221122a3ab9cfb0b22073aeb7c2552b085ba9cd9a429a6
+
+notification-success-fanfare.wav — https://raw.githubusercontent.com/wyzowl/sfx-kit/92780e7ab0cdfb557497a988089c47f46e8c7412/sounds/notifications/notification-success-fanfare.wav
+SHA-256 717e3dee5075a2cf06aa2dfeaa666bb7628e1336105fad38f66a18ca80cff1f5

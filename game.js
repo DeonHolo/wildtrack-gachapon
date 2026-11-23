@@ -179,8 +179,9 @@
     showReveal("opening", byId("reveal-title").textContent, "", "");
     if (!golden) setPrize(round.item);
     const finish = () => {
+      audio.play(golden ? "gold" : "reward");
       if (golden) {
-        audio.play("gold");
+
         showReveal("choice", "Your pick!", "Choose the sticker you’d like to take home.", "");
       } else award();
     };

@@ -204,3 +204,5 @@ dialog p { margin: 14px 0 22px; color: var(--muted); line-height: 1.55; }
   *, *::before, *::after { scroll-behavior: auto !important; }
   .action, .tool, .staff-trigger, .staff-toggle { transition: none; }
 }
+
+@media(max-width:760px){.sticker-strip{gap:1px;padding-left:4px}.sticker-strip img{width:clamp(21px,6.65vw,38px)}}

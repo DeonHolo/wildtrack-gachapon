@@ -10,6 +10,8 @@
     { key: "golden", description: "Opaque golden capsule", color: "golden" },
     { key: "pdf", description: "Wildcat holding a paper", color: "sky" },
     { key: "search", description: "Wildcat with a magnifying glass", color: "teal" },
+    { key: "ishowmeat", description: "Wildcat squeezing its eyes shut", color: "sky" },
+    { key: "meatbread", description: "Wildcat biting a bun", color: "apricot" },
   ];
   function shell(key) {
     if (key === "golden") return `<span class="ball-backing"></span>
@@ -23,13 +25,15 @@
 
   // Rear capsules sit a little higher and have smaller shells.
   const pile = [
-    { x: 10, y: 37, size: 25, tilt: -14 },
-    { x: 38, y: 43, size: 25, tilt: 11 },
-    { x: 65, y: 34, size: 25, tilt: -7 },
-    { x: -1, y: -3, size: 28, tilt: -12 },
-    { x: 25, y: -1, size: 26, tilt: 10 },
-    { x: 49, y: -4, size: 27, tilt: -9 },
-    { x: 75, y: -5, size: 27, tilt: 11 },
+    { x: 7, y: 38, size: 23, tilt: 8 },
+    { x: 28, y: 44, size: 23, tilt: -8 },
+    { x: 49, y: 44, size: 23, tilt: 8 },
+    { x: 70, y: 37, size: 23, tilt: -8 },
+    { x: 0, y: 0, size: 22, tilt: 8 },
+    { x: 20, y: -2, size: 22, tilt: -8 },
+    { x: 40, y: -2, size: 22, tilt: 8 },
+    { x: 60, y: -2, size: 22, tilt: -8 },
+    { x: 79, y: 0, size: 22, tilt: 8 },
   ];
   const balls = pile.map(({ x, y, size, tilt }, index) => `
     <span class="ball-slot" style="left:${x}%;bottom:${y}%;width:${size}%;--tilt:${tilt}deg;--lag:${index * 13}ms">
@@ -130,7 +134,7 @@
       <span class="empty-face" aria-hidden="true"><i></i><i></i></span>
     </div>`;
 
-  // Only the six physical designs appear in the lineup and on the choice screen.
+  // Only the eight physical designs appear in the lineup and on the choice screen.
   const stickers = catalog.filter((item) => item.key !== "golden");
   document.querySelector(".sticker-strip").innerHTML = stickers.map((item) =>
     `<img src="assets/${item.key}.png" width="52" height="48" alt="${item.description}" draggable="false">`

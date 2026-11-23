@@ -47,7 +47,7 @@
 .reveal-sparks i:nth-child(4) { width: 4%; left: 10%; bottom: 11%; }
 #choices {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-46%);
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(9px,1.5svh,15px); width: min(84vw, 52svh, 468px);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(9px,1.5svh,15px); width: min(84vw, 52svh, 468px);
 }
 #choices button {
   display: grid; place-items: center; min-width: 0; aspect-ratio: 1.23; padding: 8%;

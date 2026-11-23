@@ -10,7 +10,7 @@ Open `index.html` in Chrome, Edge, Firefox or Safari. Keep the folder together. 
 
 Turn the crank or click the gold handle. If a capsule sticks, nudge it. Tap the capsule once it reaches the middle of the screen. **Next player** starts a fresh draw.
 
-Each of the six original Wildcat stickers and the solid golden capsule has a **1 in 7** chance per draw. Gold lets the visitor choose any one of the six stickers. The first pull in a browser session sticks. Later pulls have a one-in-four chance to stick, independent of the prize.
+Each of the eight original Wildcat stickers and the solid golden capsule has a **1 in 9** chance per draw. Gold lets the visitor choose any one of the eight stickers. The first pull in a browser session sticks. Later pulls have a one-in-four chance to stick, independent of the prize.
 
 **Booth controls** lets the crew mark stickers sold out or reopen the machine. The sound button remembers its setting. The game supports keyboard input and the device’s reduced-motion preference.
 

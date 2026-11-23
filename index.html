@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7e8">
+  <meta name="description" content="Turn the WildTrack gachapon at the TekCon booth to get a Wildcat sticker.">
+  <meta property="og:title" content="Wildcat Gachapon · WildTrack">
+  <title>Wildcat Gachapon · WildTrack</title>
+  <link rel="icon" href="assets/wildtrack.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="machine.css">
+  <link rel="stylesheet" href="reveal.css">
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/howler.core.min.js"></script>
+  <script defer src="machine.js"></script>
+  <script defer src="audio.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <a class="skip" href="#action">Skip to the game</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+      <symbol id="i-muted" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16.5 9l5 6m0-6-5 6"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5m0 6v5h-5m-6 0H4v-5"/></symbol>
+      <symbol id="i-contract" viewBox="0 0 24 24"><path d="M9 4v5H4m11-5v5h5m0 6h-5v5M4 15h5v5"/></symbol>
+      <symbol id="i-turn" viewBox="0 0 24 24"><path d="M20 5v6h-6m6-1a8 8 0 1 0-.8 7.1"/></symbol>
+      <symbol id="i-next" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-nudge" viewBox="0 0 24 24"><path d="M7 13V7a1.5 1.5 0 0 1 3 0v4-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v6-3a1.5 1.5 0 0 1 3 0v6c0 4-2 7-6 7h-1c-2 0-3-1-4-2l-5-6a1.5 1.5 0 0 1 2-2l2 2Z"/></symbol>
+      <symbol id="i-controls" viewBox="0 0 24 24"><path d="M3 7h5m4 0h9M3 17h10m4 0h4"/><circle cx="10" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 6h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4zm11 2v1m0 2.5v1m0 2.5v1"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="game" data-phase="ready">
+    <header class="masthead">
+      <div class="mast-inner">
+        <div class="brand" aria-label="WildTrack Booth Arcade">
+          <img src="assets/wildtrack.svg" width="39" height="39" alt="">
+          <span class="brand-name">WildTrack</span><span class="arcade-name">Booth Arcade</span>
+        </div>
+        <div class="toolbar" aria-label="Game settings">
+          <button class="tool" id="sound" type="button" aria-pressed="true" aria-label="Sound on">
+            <svg class="ico icon-on" aria-hidden="true"><use href="#i-sound"/></svg>
+            <svg class="ico icon-off" aria-hidden="true"><use href="#i-muted"/></svg>
+            <span data-control-label>Sound on</span>
+          </button>
+          <button class="tool" id="fullscreen" type="button" aria-pressed="false" aria-label="Full screen">
+            <svg class="ico icon-on" aria-hidden="true"><use href="#i-expand"/></svg>
+            <svg class="ico icon-off" aria-hidden="true"><use href="#i-contract"/></svg>
+            <span data-control-label>Full screen</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="play-floor" aria-label="Wildcat Gachapon">
+        <div class="play-grid">
+          <div class="intro">
+            <div class="status"><i aria-hidden="true"></i><span id="status-text">Ready to play</span></div>
+            <h1 class="headline">
+              <span class="game-name"><span>Wildcat<span class="title-spark" aria-hidden="true"></span></span><span>Gachapon</span></span>
+              <span id="display-title">Ready to roll?</span>
+            </h1>
+          </div>
+
+          <div class="stage">
+            <div class="stage-art" aria-hidden="true">
+              <div class="sun-disc"></div>
+              <div class="screen-dots dots-left"></div><div class="screen-dots dots-right"></div>
+              <i class="spark spark-a"></i><i class="spark spark-b"></i><i class="spark spark-c"></i>
+              <i class="spark spark-d"></i><i class="spark spark-e"></i>
+              <div class="ground-shadow"></div>
+            </div>
+            <div id="machine"></div>
+          </div>
+
+          <div class="play-controls">
+            <p id="display-copy">Turn the crank for a Wildcat sticker.</p>
+            <button id="action" class="action" type="button">
+              <span id="action-label">Turn the crank</span>
+              <svg class="ico action-icon" aria-hidden="true">
+                <use class="action-turn" href="#i-turn"/><use class="action-nudge" href="#i-nudge"/>
+              </svg>
+            </button>
+          </div>
+
+          <aside class="lineup" aria-label="Sticker lineup">
+            <div class="ticket">
+              <div class="ticket-title"><svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg><span>Sticker<br>lineup</span></div>
+              <div class="sticker-strip"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="foot-inner">
+        <span class="venue"><i aria-hidden="true"></i>TekCon 2026 <span class="venue-mark">/</span> CIT-U</span>
+        <button class="staff-trigger" type="button" id="booth-settings"><svg class="ico" aria-hidden="true"><use href="#i-controls"/></svg>Booth controls</button>
+      </div>
+    </footer>
+
+    <div id="announcement" class="sr-only" role="status" aria-atomic="true"></div>
+    <dialog id="reveal" aria-labelledby="reveal-title" aria-describedby="reveal-hint">
+      <div class="reveal-veil"></div>
+      <div class="reveal-halo" aria-hidden="true"></div>
+      <div class="reveal-heading">
+        <h2 id="reveal-title">Your capsule</h2>
+      </div>
+      <div class="reveal-center">
+        <div id="flight">
+          <button id="center-ball" type="button" aria-label="Open your capsule" aria-disabled="true">
+            <span id="center-shell" class="capsule"></span>
+          </button>
+        </div>
+        <img id="prize-art" alt="" hidden>
+        <div class="reveal-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="reveal-actions">
+        <p id="reveal-hint">Tap the capsule to open it.</p>
+        <button id="reveal-action" class="action" type="button">
+          <span>Open capsule</span><svg class="ico" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+      </div>
+      <div id="choices" role="group" aria-label="Choose one of the six stickers" hidden></div>
+      <span id="reveal-announcement" class="sr-only" role="status" aria-atomic="true"></span>
+    </dialog>
+    <dialog id="operator" aria-labelledby="operator-title">
+      <h2 id="operator-title">Booth controls</h2>
+      <p>Close the machine when the sticker table runs out. Reopen it here when you restock.</p>
+      <div class="dialog-actions"><button type="button" class="staff-toggle" id="toggle-stock">Mark stickers sold out</button><button type="button" class="staff-back" id="close-settings">Back to game</button></div>
+      <p class="sound-credit">Sound effects by <a href="https://elevenlabs.io/sound-effects/ai" target="_blank" rel="noopener noreferrer">ElevenLabs</a> and <a href="https://github.com/wyzowl/sfx-kit" target="_blank" rel="noopener noreferrer">Wyzowl</a>.</p>
+    </dialog>
+    <noscript>Enable JavaScript in this browser to turn the crank.</noscript>
+  </div>
+</body>
+</html>

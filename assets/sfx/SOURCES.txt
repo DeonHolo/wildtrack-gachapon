@@ -1,0 +1,34 @@
+WildTrack Gachapon offline sound effects
+
+Source: Wyzowl SFX Kit (AI-assisted procedural WAV effects, released under CC0)
+Repository: https://github.com/wyzowl/sfx-kit
+Pinned commit: 92780e7ab0cdfb557497a988089c47f46e8c7412
+License text: CC0-1.0.txt (copied from the pinned repository commit)
+Creation method: https://huggingface.co/datasets/wyzowl/sfx-kit
+
+The turn cue uses an ElevenLabs Sound Effects library sample. ElevenLabs
+describes this item as “Robotic arm clicking clunking” and its AI sound
+effects page says free-plan use requires attribution to elevenlabs.io.
+Source page: https://elevenlabs.io/sound-effects/ai
+Original download: https://eleven-public-cdn.elevenlabs.io/payloadcms/2fzr3hildqd-ai-sfx-8.mp3
+Bundled edit: trimmed to 1.25 seconds, faded out over the final 0.20 seconds,
+and attenuated by 0.8 with ffmpeg/libmp3lame for a restrained toy mechanism.
+The game plays the crank at 1.35× speed to follow the handle through one turn.
+eleven-robotic-arm-clicks-trimmed.mp3
+  SHA-256 c93fad0b6a8254007978f84620f8b8c197be5c18bd0ba9ed6bdaa0c8c818ffe8
+
+Files and upstream paths:
+foley-plastic-touch.wav <- sounds/foley/foley-plastic-touch.wav
+  SHA-256 c61e0be4b1f150b55f4efc7088991b137d73562b0f75302061348291091482f4
+notification-failure-thud.wav <- sounds/notifications/notification-failure-thud.wav
+  SHA-256 7d4ab054cd676a55f3b858811298188c02407b3546a4f207ea6b645f5e57da1b
+notification-success-clear.wav <- sounds/notifications/notification-success-clear.wav
+  SHA-256 c1d38e500643ab7303beb2cd31c608a87c1b95fadaab339b9358208a5b5f5f99
+pop-medium-in.wav <- sounds/pops/pop-medium-in.wav
+  SHA-256 0c92cb9be01b1b5a3b51d4a6bfe427947b228ea71bb95d5a0b6c8641b7eab511
+pop-medium-out.wav <- sounds/pops/pop-medium-out.wav
+  SHA-256 67633f10af09e05f1be98c7f2be86bda5f8fbde93dce6b562fbc4284109e6dfe
+
+Cue mapping in audio.js:
+turn = ElevenLabs robotic arm clicks; jam = failure thud; nudge = plastic touch;
+drop = pop medium-in; open = pop medium-out; gold = success clear.

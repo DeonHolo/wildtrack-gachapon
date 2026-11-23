@@ -14,6 +14,14 @@ Each of the eight original Wildcat stickers and the solid golden capsule has a *
 
 **Booth controls** lets the crew mark stickers sold out or reopen the machine. The sound button remembers its setting. The game supports keyboard input and the device’s reduced-motion preference.
 
+## Preview
+
+![The booth machine with eight Wildcat stickers and a golden capsule](docs/previews/machine.jpg)
+
+![Two Wildcat capsules opening, followed by the golden capsule’s eight-sticker picker](docs/previews/gameplay.gif)
+
+[Watch the gameplay clip with sound (MP4)](docs/previews/gameplay.mp4)
+
 ## Credits
 
 The original Wildcat sticker art belongs to the WildTrack team. The cabinet and capsule shells are drawn in SVG and CSS. The reveal uses locally bundled GSAP 3.15.1 and sound playback uses Howler 2.2.4. Bricolage Grotesque and Manrope are bundled locally.
